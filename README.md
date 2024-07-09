@@ -2,13 +2,13 @@
 
 ## Project chosen
 
-Name: <TODO>
+Name: pythonping
 
-URL: <TODO>
+URL: https://github.com/alessandromaggio/pythonping.git
 
-Number of lines of code and the tool used to count it: <TODO>
+Number of lines of code and the tool used to count it: The number of lines of code (nloc) is 1023, and the tools used to count the nloc was Lizard. 
 
-Programming language: <TODO>
+Programming language: Python
 
 ## Coverage measurement with existing tool
 
