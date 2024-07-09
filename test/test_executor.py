@@ -70,6 +70,18 @@ class ResponseTestCase(unittest.TestCase):
         self.assertEqual(executor.Response(None, 0.001).time_elapsed_ms, 1, 'Bad ms representation for 1 ms')
         self.assertEqual(executor.Response(None, 0.01).time_elapsed_ms, 10, 'Bad ms representation for 10 ms')
 
+    def test_legacy_repr(self):
+        self.assertEqual(executor.Response(None, 0.1).legacy_repr(), 'Request timed out', 'Incorrect legacy representation for request time out')
+        
+        # msg = executor.Message('', icmp.ICMP(icmp.Types.EchoReply), '127.0.0.1')
+        # response = executor.Response(msg, 0.1)
+        # self.assertTrue(response.success)
+        # self.assertEqual(response.legacy_repr(), 'Reply from {0}, {1} bytes in {2}ms'.format('127.0.0.1', len(self.response.msg.packet.raw), 100), 'Incorrect legacy rperesentation for successful response')
+
+        response = executor.Response(executor.Message('', icmp.ICMP(icmp.Types.DestinationUnreachable), '127.0.0.1'), 0.1)
+        self.assertFalse(response.success)
+        self.assertEqual(response.legacy_repr(), 'Network Unreachable from 127.0.0.1 in 100.0ms', 'Incorrect legacy representation for failed response')
+
 
 class ResponseListTestCase(unittest.TestCase):
     """Tests for ResponseList"""
