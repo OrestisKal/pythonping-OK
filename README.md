@@ -28,12 +28,18 @@ The tool used to measure the coverage was Coverage.py and it was executed by run
 <Function 1>
 
 <Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced tests for function 1>
+https://github.com/OrestisKal/pythonping-OK/commit/b5192759d4847b0fdbaf91853f532d52dd3f903f
 
 <Provide a screenshot of the old coverage results for such function>
+<img width="1376" alt="Function1 cov before" src="https://github.com/OrestisKal/pythonping-OK/assets/78654750/c3444eab-78a0-44d1-ba45-df077cb42f0e">
+
 
 <Provide a screenshot of the new coverage results for such function>
+<img width="1371" alt="Function1 cov 100%" src="https://github.com/OrestisKal/pythonping-OK/assets/78654750/9165ecde-6a07-48a7-8014-f7b5fcfec7ee">
+
 
 <State the coverage improvement with a number and elaborate on why the coverage is improved>
+The coverage improvement is an increase of 100%. Initially, none of the branches were executed, but after creating a new test case that targeted the three branches, including the invisible 'else' branch, each branch was executed. Thus, a 100% branch coverage.
 
 ### Overall
 
