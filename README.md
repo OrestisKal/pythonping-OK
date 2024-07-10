@@ -12,10 +12,8 @@ Programming language: Python
 
 ## Coverage measurement with existing tool
 
-<Inform the name of the existing tool that was executed and how it was executed>
 The tool used to measure the coverage was Coverage.py and it was executed by running the command 'sumo coverage run -m unittest discover test' in the terminal.
 
-<Show the coverage results provided by the existing tool with a screenshot>
 <img width="1045" alt="Coverage before" src="https://github.com/OrestisKal/pythonping-OK/assets/78654750/a9300377-c5c2-42ef-a75c-f036311b9583">
 
 
@@ -23,7 +21,6 @@ The tool used to measure the coverage was Coverage.py and it was executed by run
 
 ### Individual tests
 
-<The following is supposed to be repeated for each function (2 in total)>
 
 #### Function 1
 
@@ -43,7 +40,7 @@ The coverage improvement is an increase of 100%. Initially, none of the branches
 
 #### Function 2
 
-Link to commit showing additions to existing test case to improve coverage:
+Link to commit showing additions to the existing test case to improve coverage:
 https://github.com/OrestisKal/pythonping-OK/commit/5d51b73c06640458bb4d4b9a5cf18858d70bf81c
 
 ##### Function 2 coverage, before coverage improvement
@@ -52,7 +49,7 @@ https://github.com/OrestisKal/pythonping-OK/commit/5d51b73c06640458bb4d4b9a5cf18
 ##### Function 2 coverage, after coverage improvement
 <img width="1366" alt="Function2 cov 100%" src="https://github.com/OrestisKal/pythonping-OK/assets/78654750/ab217ecc-a946-4b61-b147-c1cfa414d246">
 
-The coverage improvement is an increase of 100%. To begin with, the branch coverage of the function was 0%, despite having an existing test case. After enhancing the existing test case to call on the function, both branches including the invisible 'else' branch were executed. Thus, a 100%v branch coverage for the function.
+The coverage improvement is an increase of 100%. To begin with, the branch coverage of the function was 0%, despite having an existing test case. After enhancing the existing test case to call on the function, both branches including the invisible 'else' branch were executed. Thus, a 100% branch coverage for the function.
 
 
 
