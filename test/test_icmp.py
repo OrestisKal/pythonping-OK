@@ -86,9 +86,16 @@ class ICMPTestCase(unittest.TestCase):
     def test_is_valid(self):
         """Verifies that understands if receives a packet with valid or invalid checksum"""
         ip_header_offset = b''.join([b'0' for _ in range(20)])
+
+        packet = icmp.ICMP(icmp.Types.EchoReply)
+        packet.received_checksum == None
+        self.assertTrue(packet.is_valid, 'Checksum validation failed')
+
         # Following two packets have a good checksum
         packet = icmp.ICMP.generate_from_raw(ip_header_offset + b'\x00\x00\xbe\xdb\x01\x00\x01\x00banana')
         self.assertEqual(packet.received_checksum, packet.expected_checksum, 'Checksum validation failed')
+        self.assertTrue(packet.is_valid, 'Checksum validation faile')
+
         packet = icmp.ICMP.generate_from_raw(ip_header_offset + b'\x08\x00@\xca\xb47\x01\x00random text goes here')
         self.assertEqual(packet.received_checksum, packet.expected_checksum, 'Checksum validation failed')
         # Packet 'does' instead of 'goes'
