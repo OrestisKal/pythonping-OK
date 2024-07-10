@@ -6,15 +6,18 @@ Name: pythonping
 
 URL: https://github.com/alessandromaggio/pythonping.git
 
-Number of lines of code and the tool used to count it: The number of lines of code (nloc) is 1023, and the tools used to count the nloc was Lizard. 
+Number of lines of code and the tool used to count it: The number of lines of code (nloc) is 1023, and the tool used to count the nloc was Lizard. 
 
 Programming language: Python
 
 ## Coverage measurement with existing tool
 
 <Inform the name of the existing tool that was executed and how it was executed>
+The tool used to measure the coverage was Coverage.py and it was executed by running the command 'sumo coverage run -m unittest discover test' in the terminal.
 
 <Show the coverage results provided by the existing tool with a screenshot>
+<img width="1045" alt="Coverage before" src="https://github.com/OrestisKal/pythonping-OK/assets/78654750/a9300377-c5c2-42ef-a75c-f036311b9583">
+
 
 ## Coverage improvement
 
