@@ -73,10 +73,12 @@ class ResponseTestCase(unittest.TestCase):
     def test_legacy_repr(self):
         self.assertEqual(executor.Response(None, 0.1).legacy_repr(), 'Request timed out', 'Incorrect legacy representation for request time out')
         
-        # msg = executor.Message('', icmp.ICMP(icmp.Types.EchoReply), '127.0.0.1')
-        # response = executor.Response(msg, 0.1)
-        # self.assertTrue(response.success)
-        # self.assertEqual(response.legacy_repr(), 'Reply from {0}, {1} bytes in {2}ms'.format('127.0.0.1', len(self.response.msg.packet.raw), 100), 'Incorrect legacy rperesentation for successful response')
+        icmp_packet = icmp.ICMP(icmp.Types.EchoReply)
+        icmp_packet.packet
+        msg = executor.Message('', icmp_packet, '127.0.0.1')
+        response = executor.Response(msg, 0.1)
+        self.assertTrue(response.success)
+        self.assertEqual(response.legacy_repr(), 'Reply from {0}, {1} bytes in {2}ms'.format('127.0.0.1', len(response.message.packet.raw), 100.0), 'Incorrect legacy rperesentation for successful response')
 
         response = executor.Response(executor.Message('', icmp.ICMP(icmp.Types.DestinationUnreachable), '127.0.0.1'), 0.1)
         self.assertFalse(response.success)

@@ -128,6 +128,9 @@ class Response:
         return represent_seconds_in_ms(self.time_elapsed)
 
     def legacy_repr(self):
+        # print(f'DEBUG: self.message = {self.message}')
+        # print(f'DEBUG: self.message.packet = {self.message.packet if self.message else None}')
+    
         if self.message is None:
             return 'Request timed out'
         if self.success:
